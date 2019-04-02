@@ -1,6 +1,7 @@
-# 220-Advanced-Template
-## Not for class use - Fork me!
+# 220-Advanced
+## Your class name here
+Links for setting up git for this class:
 
-This is the master repo from which an instructor will use a fork to create their class assignment repo.
+- https://uwpce-pythoncert.github.io/PythonCertDevel220/modules/lesson00/git_setup.html
+- https://uwpce-pythoncert.github.io/PythonCertDevel220/modules/lesson00/git_workflow.html
 
-PLEASE do not use this for your students' assignments.
