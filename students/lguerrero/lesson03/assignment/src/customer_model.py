@@ -1,6 +1,6 @@
 # Model Definition
 
-from peewee import *
+from peewee import Model, SqliteDatabase, CharField
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -42,16 +42,16 @@ import csv, sqlite3, codecs
 CON = sqlite3.connect("customers.db")
 CUR = CON.cursor()
 
-to_db = []
-with open('../data/customer.csv','rb') as cus: 
-    fcus = csv.reader(codecs.iterdecode(cus, 'utf-8', errors='ignore'))
-    for ri, r in enumerate(fcus):
+TO_DB = []
+with open('../data/customer.csv', 'rb') as cus: 
+    FCUS = csv.reader(codecs.iterdecode(cus, 'utf-8', errors='ignore'))
+    for ri, r in enumerate(FCUS):
         if ri == 0:
             continue
         else:
-            to_db.append(tuple(r))
+            TO_DB.append(tuple(r))
 
-CUR.executemany("INSERT INTO Customer VALUES (?, ?, ?, ?, ?, ?, ?, ?);", to_db)
+CUR.executemany("INSERT INTO Customer VALUES (?, ?, ?, ?, ?, ?, ?, ?);", TO_DB)
 CON.commit()
 CON.close()
 
